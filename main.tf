@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  load_config_file       = false
+  #load_config_file       = false
   cluster_ca_certificate = base64decode(var.kubernetes_cluster_cert_data)
   host                   = var.kubernetes_cluster_endpoint
   exec {
@@ -11,7 +11,7 @@ provider "kubernetes" {
 
 provider "helm" {
   kubernetes {
-    load_config_file       = false
+    #load_config_file       = false
     cluster_ca_certificate = base64decode(var.kubernetes_cluster_cert_data)
     host                   = var.kubernetes_cluster_endpoint
     exec {
